@@ -38,11 +38,11 @@ const DateText = ({ value }: { value: string }) => {
 export default function Transactions({ activeTab, values, isLoading }: props) {
   return (
     <Card className="pt-4 px-4 h-[300px] flex flex-col overflow-hidden gap-2">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col md:flex-row justify-between md:items-center">
         <Typography variant="lead" className="font-semibold text-gray-800">
           Latest Transaction
         </Typography>
-        <ButtonGroup variant="outlined" color="blue-gray">
+        <ButtonGroup variant="outlined" color="blue-gray" className="self-end">
           <Button
             className={`"px-3 py-2 text-xs font-semibold capitalize outline-none text-gray-800 ${
               activeTab === 1 && "bg-gray-300"

@@ -83,7 +83,7 @@ export default function RootLayout({
               draggable
               pauseOnHover={false}
               theme="dark"
-              style={{ zIndex: 10000 }}
+              style={{ zIndex: 9999999 }}
             />
           </body>
         </ThemeProvider>
