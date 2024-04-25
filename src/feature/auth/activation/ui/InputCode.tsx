@@ -18,10 +18,10 @@ const InputValue = ({ ref, onChange, onKeyUp }: any) => (
 );
 
 export default function InputCode() {
-  const handler = useInputHandler();
+  // const handler = useInputHandler();
   return (
     <div className="flex justify-center gap-3">
-      <Input
+      {/* <Input
         ref={handler.boxReference}
         onChange={(e) => handler.handleChange(e, 0)}
         // onKeyUp={onKeyUp}
@@ -92,7 +92,7 @@ export default function InputCode() {
           className: "hidden",
         }}
         containerProps={{ className: "min-w-[0px]" }}
-      />
+      /> */}
     </div>
   );
 }
