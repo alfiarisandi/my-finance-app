@@ -19,6 +19,7 @@ const InputValue = ({ ref, onChange, onKeyUp }: any) => (
 
 export default function InputCode() {
   // const handler = useInputHandler();
+  // const handler = useInputHandler();
   return (
     <></>
     // <div className="flex justify-center gap-3">

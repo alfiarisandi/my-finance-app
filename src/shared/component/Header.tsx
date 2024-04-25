@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 import {
   Button,
   Card,
@@ -20,6 +20,8 @@ import {
   LuUser,
 } from "react-icons/lu";
 import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
+import nProgress from "nprogress";
 
 type props = {
   sideOpen: () => void;
@@ -32,6 +34,7 @@ export default function HeaderComponent({
   onLogout,
   handlerModals,
 }: props) {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuProfileOpen, setIsMenuProfileOpen] = useState(false);
   const [fullname, setFullName] = useState<string>("");
@@ -48,7 +51,7 @@ export default function HeaderComponent({
       >
         <LuLayoutList className="w-4 h-4 text-gray-900" />
       </Button>
-      <div className="flex flex-row justify-between items-center w-full pl-2 lg:pl-0">
+      <div className="flex flex-col md:flex-row justify-between gap-3 md:items-center w-full pl-2 lg:pl-0">
         <div>
           <Typography
             variant="paragraph"
@@ -60,7 +63,7 @@ export default function HeaderComponent({
             Make sure cash flow is calculated.
           </Typography>
         </div>
-        <div className="flex gap-3">
+        <div className="flex gap-3 self-end">
           <Menu
             open={isMenuOpen}
             handler={setIsMenuOpen}
@@ -136,7 +139,13 @@ export default function HeaderComponent({
               </Button>
             </MenuHandler>
             <MenuList>
-              <MenuItem className="flex gap-3 items-center">
+              <MenuItem
+                onClick={() => {
+                  nProgress.start();
+                  router.replace("/profile");
+                }}
+                className="flex gap-3 items-center"
+              >
                 <LuUser className="h-5 w-5" />
                 <Typography
                   variant="small"
