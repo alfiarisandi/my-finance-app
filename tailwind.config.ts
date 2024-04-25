@@ -1,11 +1,7 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+const withMT = require("@material-tailwind/react/utils/withMT");
+/* @type {import('tailwindcss').Config} */
+module.exports = withMT({
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       backgroundImage: {
@@ -14,7 +10,11 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    fontFamily: {
+      sans: ["var(--font-montserrat)", "sans-serif"],
+      serif: ["var(--font-montserrat)", "serif"],
+      body: ["var(--font-montserrat)", "sans-serif"],
+    },
   },
   plugins: [],
-};
-export default config;
+});
